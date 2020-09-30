@@ -1,5 +1,6 @@
 import globeSVG from '@plone/volto/icons/globe.svg';
 import { WebmapBlockEdit, WebmapBlockView } from './WebmapBlock';
+import ConfirmInputWidget from './Widgets/ConfirmInputWidget';
 
 export default (config) => {
   config.blocks.blocksConfig.esriWebmap = {
@@ -18,5 +19,6 @@ export default (config) => {
     },
   };
   // config.widgets.widget.bise_select = SelectWidget;
+  config.widgets.widget.confirm_url = ConfirmInputWidget
   return config;
 };

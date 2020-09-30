@@ -23,7 +23,7 @@ export const MapLayerSchema = () => ({
   properties: {
     map_service_url: {
       title: 'Map service URL',
-      widget: 'url',
+      widget: 'confirm_url',
       description: 'Enter a map service URL and confirm with Enter key',
     },
     layer: {

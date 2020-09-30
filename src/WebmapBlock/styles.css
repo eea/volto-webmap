@@ -1,3 +1,15 @@
 .esri-map {
   height: 45vh;
 }
+
+.red-border input {
+  border-bottom: 2px solid #ffbaba!important;
+}
+
+.green-border input {
+  border-bottom: 2px solid #aedc85!important;
+}
+
+/* .ui.input input:hover {
+  border-color: hsl(0,0%,70%)!important;
+} */
