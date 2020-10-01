@@ -4,55 +4,13 @@ import { connect } from 'react-redux';
 import { MapSchema, MapFiltersSchema } from './schema';
 // import { addPrivacyProtectionToSchema } from 'volto-embed';
 import { getProxiedExternalContent } from '@eeacms/volto-corsproxy/actions';
+import withMapLayers from './withMapLayers';
 
 class SchemaProvider extends Component {
-  componentDidMount() {
-    this.refresh();
-  }
-  componentDidUpdate() {
-    this.refresh();
-  }
-
-  refresh = () => {
-    const {
-      data = {},
-      subrequests,
-      map_service_infos,
-      map_layer_infos,
-    } = this.props;
-
-    const { map_layers = [] } = data;
-
-    // Request info for the map service
-    map_layers.forEach(({ map_service_url, layer = null }) => {
-      map_service_infos[map_service_url] = subrequests[map_service_url]?.data;
-      if (
-        !map_service_infos[map_service_url] &&
-        !subrequests[map_service_url]
-      ) {
-        this.props.getProxiedExternalContent(
-          `${map_service_url}?f=json`,
-          null,
-          map_service_url,
-        );
-      }
-      const layer_url = layer !== null ? `${map_service_url}/${layer}` : null;
-      const layer_info = layer_url ? subrequests[layer_url]?.data : null;
-      map_layer_infos[layer_url] = layer_info;
-      if (layer_url && !layer_info && !subrequests[layer_url]) {
-        this.props.getProxiedExternalContent(
-          `${layer_url}?f=json`,
-          null,
-          layer_url,
-        );
-      }
-    });
-  };
-
   deriveSchemaFromProps = () => {
     const schema = MapSchema();
 
-    console.log('props', this.props);
+    // console.log('props', this.props);
 
     // const mapFiltersSchema = MapFiltersSchema();
 
@@ -100,30 +58,74 @@ class SchemaProvider extends Component {
   }
 }
 
-export default connect(
-  (state, props) => {
-    const { subrequests } = state.content;
-    console.log('subrequests', subrequests);
-    const { data = {} } = props;
-
-    const map_service_infos = {};
-    const map_layer_infos = {};
-
-    const { map_layers = [] } = { data };
-
-    // Request info for the map service
-    map_layers.forEach(({ map_service_url, layer = null }) => {
-      map_service_infos[map_service_url] = subrequests[map_service_url]?.data;
-      const layer_url = layer !== null ? `${map_service_url}/${layer}` : null;
-      const layer_info = layer_url ? subrequests[layer_url]?.data : null;
-      map_layer_infos[layer_url] = layer_info;
-    });
-
-    return {
-      subrequests,
-      map_service_infos,
-      map_layer_infos,
-    };
-  },
-  { getProxiedExternalContent },
-)(SchemaProvider);
+export default withMapLayers(SchemaProvider);
+// export default connect(
+//   (state, props) => {
+//     const { subrequests } = state.content;
+//     // console.log('subrequests', subrequests);
+//     const { data = {} } = props;
+//
+//     const map_service_infos = {};
+//     const map_layer_infos = {};
+//
+//     const { map_layers = [] } = { data };
+//
+//     // Request info for the map service
+//     map_layers.forEach(({ map_service_url, layer = null }) => {
+//       map_service_infos[map_service_url] = subrequests[map_service_url]?.data;
+//       const layer_url = layer !== null ? `${map_service_url}/${layer}` : null;
+//       const layer_info = layer_url ? subrequests[layer_url]?.data : null;
+//       map_layer_infos[layer_url] = layer_info;
+//     });
+//
+//     return {
+//       subrequests,
+//       map_service_infos,
+//       map_layer_infos,
+//     };
+//   },
+//   { getProxiedExternalContent },
+// )(withMapLayers(SchemaProvider));
+//
+// componentDidMount() {
+//   this.refresh();
+// }
+// componentDidUpdate() {
+//   this.refresh();
+// }
+//
+// refresh = () => {
+//   const {
+//     data = {},
+//     subrequests,
+//     map_service_infos,
+//     map_layer_infos,
+//   } = this.props;
+//
+//   const { map_layers = [] } = data;
+//
+//   // Request info for the map service
+//   map_layers.forEach(({ map_service_url, layer = null }) => {
+//     map_service_infos[map_service_url] = subrequests[map_service_url]?.data;
+//     if (
+//       !map_service_infos[map_service_url] &&
+//       !subrequests[map_service_url]
+//     ) {
+//       this.props.getProxiedExternalContent(
+//         `${map_service_url}?f=json`,
+//         null,
+//         map_service_url,
+//       );
+//     }
+//     const layer_url = layer !== null ? `${map_service_url}/${layer}` : null;
+//     const layer_info = layer_url ? subrequests[layer_url]?.data : null;
+//     map_layer_infos[layer_url] = layer_info;
+//     if (layer_url && !layer_info && !subrequests[layer_url]) {
+//       this.props.getProxiedExternalContent(
+//         `${layer_url}?f=json`,
+//         null,
+//         layer_url,
+//       );
+//     }
+//   });
+// };
