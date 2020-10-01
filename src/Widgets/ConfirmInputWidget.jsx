@@ -8,9 +8,8 @@ const ConfirmInputWidget = (props) => {
   const [isInputChanged, setIsInputChanged] = useState(false);
   const [isInputEntered, setIsInputEntered] = useState(false);
 
-  return(
-    <FormFieldWrapper
-      {...props}>
+  return (
+    <FormFieldWrapper {...props}>
       <Input
         id={`field-${id}`}
         name={id}
@@ -30,11 +29,9 @@ const ConfirmInputWidget = (props) => {
             e.stopPropagation();
           }
         }}
-        className={
-          `${isInputChanged ? "red-border" : ""}
-           ${isInputEntered ? "green-border" : ""}`
-        }
-        />
+        className={`${isInputChanged ? 'red-border' : ''}
+           ${isInputEntered ? 'green-border' : ''}`}
+      />
     </FormFieldWrapper>
   );
 };

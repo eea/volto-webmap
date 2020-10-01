@@ -28,7 +28,7 @@ export const MapLayerSchema = () => ({
     },
     layer: {
       title: 'Map layer',
-      // widget: 'bise_select',
+      widget: 'select_map_layer',
       choices: [],
     },
   },

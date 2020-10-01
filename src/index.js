@@ -1,5 +1,6 @@
 import globeSVG from '@plone/volto/icons/globe.svg';
 import { WebmapBlockEdit, WebmapBlockView } from './WebmapBlock';
+import MapLayerSelectWidget from './WebmapBlock/Widgets/MapLayerSelectWidget';
 import ConfirmInputWidget from './Widgets/ConfirmInputWidget';
 
 export default (config) => {
@@ -18,7 +19,7 @@ export default (config) => {
       view: [],
     },
   };
-  // config.widgets.widget.bise_select = SelectWidget;
-  config.widgets.widget.confirm_url = ConfirmInputWidget
+  config.widgets.widget.select_map_layer = MapLayerSelectWidget;
+  config.widgets.widget.confirm_url = ConfirmInputWidget;
   return config;
 };
