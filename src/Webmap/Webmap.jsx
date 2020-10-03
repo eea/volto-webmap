@@ -1,7 +1,7 @@
 import React from 'react';
 import { loadModules } from 'esri-loader';
-import { connect } from 'react-redux';
-import { getProxiedExternalContent } from '@eeacms/volto-corsproxy/actions';
+// import { connect } from 'react-redux';
+// import { getProxiedExternalContent } from '@eeacms/volto-corsproxy/actions';
 
 const MODULES = [
   'esri/Map',
@@ -55,10 +55,6 @@ const Webmap = (props) => {
     }
   }, [setModules, options]);
 
-  // return <div>Map</div>;
-
-  // const layer_url = layer ? `${map_service_url}/${layer}` : null;
-  //
   // const initial_map_filter_query = React.useRef(
   //   map_filters ? filterToWhereParams(map_filters) : null,
   // );
@@ -98,7 +94,6 @@ const Webmap = (props) => {
       map,
     });
 
-    console.log('layers', layers);
     view.whenLayerView(layers[0]).then((layerView) => {
       layerView.watch('updating', (val) => {
         setMapIsUpdating(true);
@@ -119,7 +114,7 @@ const Webmap = (props) => {
     return { view, map };
   }, [modules, base_layer, map_layers]);
 
-  // const currentLayerView = esri.view?.layerViews?.items?.[0];
+  const currentLayerView = esri.view?.layerViews?.items?.[0];
   // React.useEffect(() => {
   //   if (!currentLayerView) return;
   //
