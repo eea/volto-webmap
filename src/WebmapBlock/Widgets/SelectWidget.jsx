@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+// import { connect } from 'react-redux';
+// import { compose } from 'redux';
 import { map, find, isBoolean, isObject, intersection } from 'lodash';
-import { defineMessages, injectIntl } from 'react-intl';
+import { defineMessages } from 'react-intl'; //
 import loadable from '@loadable/component';
 
 import {
   getBoolean,
-  getVocabFromHint,
-  getVocabFromField,
-  getVocabFromItems,
+  // getVocabFromHint,
+  // getVocabFromField,
+  // getVocabFromItems,
 } from '@plone/volto/helpers';
 import { FormFieldWrapper } from '@plone/volto/components';
-import { getVocabulary, getVocabularyTokenTitle } from '@plone/volto/actions';
+// import { getVocabulary, getVocabularyTokenTitle } from '@plone/volto/actions';
 
 import {
   Option,
