@@ -22,5 +22,8 @@
   "scripts": {
     "release": "release-it",
     "bootstrap": "./bootstrap"
+  },
+  "dependencies": {
+    "esri-loader": "2.16.0"
   }
 }
