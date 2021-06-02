@@ -16,7 +16,11 @@
     "type": "git",
     "url": "git@github.com:eea/volto-webmap.git"
   },
+  "addons": [
+    "@eeacms/volto-embed"
+  ],
   "dependencies": {
+    "@eeacms/volto-embed": "^2.0.1",
     "esri-loader": "2.16.0"
   },
   "devDependencies": {
