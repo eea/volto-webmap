@@ -17,10 +17,12 @@
     "url": "git@github.com:eea/volto-webmap.git"
   },
   "addons": [
-    "@eeacms/volto-embed"
+    "@eeacms/volto-embed",
+    "@eeacms/volto-corsproxy"
   ],
   "dependencies": {
     "@eeacms/volto-embed": "^2.0.1",
+    "@eeacms/volto-corsproxy": "^2.1.2",
     "esri-loader": "2.16.0"
   },
   "devDependencies": {
