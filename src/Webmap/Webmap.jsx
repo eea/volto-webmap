@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { loadModules } from 'esri-loader';
 // import { connect } from 'react-redux';
@@ -27,7 +28,6 @@ export const filterToWhereParams = (map_filters) => {
 };
 
 const Webmap = (props) => {
-  console.log('webmap props', props);
   const { data = {} } = props;
   const { base_layer, map_layers } = data;
   // map_filters, map_service_url, layer,

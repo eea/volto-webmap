@@ -1,6 +1,6 @@
 import React from 'react';
 import { Style } from '@plone/volto/components';
-import { PrivacyProtection } from 'volto-embed';
+import { PrivacyProtection } from '@eeacms/volto-embed';
 import Webmap from './../Webmap';
 
 import './styles.css';
