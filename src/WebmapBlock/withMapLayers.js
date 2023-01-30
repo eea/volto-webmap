@@ -12,7 +12,6 @@ function withMapLayers(WrappedComponent) {
     const { data = {} } = props;
     const { map_layers = [] } = data;
 
-    // const mounted = React.useRef();
     const dispatch = useDispatch();
     const subrequests = useSelector((state) => state.content.subrequests);
     const requests = Object.assign(

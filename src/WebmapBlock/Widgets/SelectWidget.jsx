@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { compose } from 'redux';
 import { map, find, isBoolean, isObject, intersection } from 'lodash';
 import { defineMessages } from 'react-intl'; //
 import loadable from '@loadable/component';
-
-import {
-  getBoolean,
-  // getVocabFromHint,
-  // getVocabFromField,
-  // getVocabFromItems,
-} from '@plone/volto/helpers';
+import noop from 'lodash/noop';
+import { getBoolean } from '@plone/volto/helpers';
 import { FormFieldWrapper } from '@plone/volto/components';
-// import { getVocabulary, getVocabularyTokenTitle } from '@plone/volto/actions';
-
 import {
   Option,
   DropdownIndicator,
@@ -164,9 +155,9 @@ class SelectWidget extends Component {
     choices: [],
     loading: false,
     value: null,
-    onChange: () => {},
-    onBlur: () => {},
-    onClick: () => {},
+    onChange: noop,
+    onBlur: noop,
+    onClick: noop,
     onEdit: null,
     onDelete: null,
   };

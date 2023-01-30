@@ -1,8 +1,6 @@
 /* eslint-disable */
 import React from 'react';
 import { loadModules } from 'esri-loader';
-// import { connect } from 'react-redux';
-// import { getProxiedExternalContent } from '@eeacms/volto-corsproxy/actions';
 
 const MODULES = [
   'esri/Map',
@@ -43,8 +41,8 @@ const Webmap = (props) => {
   React.useEffect(() => {
     if (!modules_loaded.current) {
       modules_loaded.current = true;
-      loadModules(MODULES, options).then((modules) => {
-        const [Map, MapView, FeatureLayer, MapImageLayer] = modules;
+      loadModules(MODULES, options).then((_modules) => {
+        const [Map, MapView, FeatureLayer, MapImageLayer] = _modules;
         setModules({
           Map,
           MapView,
@@ -54,10 +52,6 @@ const Webmap = (props) => {
       });
     }
   }, [setModules, options]);
-
-  // const initial_map_filter_query = React.useRef(
-  //   map_filters ? filterToWhereParams(map_filters) : null,
-  // );
 
   const esri = React.useMemo(() => {
     if (Object.keys(modules).length === 0) return {};
@@ -95,36 +89,13 @@ const Webmap = (props) => {
     });
 
     view.whenLayerView(layers[0]).then((layerView) => {
-      layerView.watch('updating', (val) => {
+      layerView.watch('updating', (_val) => {
         setMapIsUpdating(true);
-        // layerView.queryExtent().then((results) => {
-        //   console.log('results', results);
-        //   if (results.count > 0) {
-        //     setMapIsUpdating(false);
-        //     view.goTo(results.extent);
-        //   }
-        // });
       });
-      // if (initial_map_filter_query.current) {
-      //   layerView.filter = {
-      //     where: initial_map_filter_query.current,
-      //   };
-      // }
     });
     return { view, map };
   }, [modules, base_layer, map_layers]);
 
-  const currentLayerView = esri.view?.layerViews?.items?.[0];
-  // React.useEffect(() => {
-  //   if (!currentLayerView) return;
-  //
-  //   if (currentLayerView && map_filters) {
-  //     currentLayerView.filter = {
-  //       where: filterToWhereParams(map_filters),
-  //     };
-  //   }
-  // }, [currentLayerView, layer, map_filters]);
-  //
   return (
     <div>
       <div>{mapIsUpdating ? 'Waiting for map server...' : ''}</div>
@@ -134,39 +105,3 @@ const Webmap = (props) => {
 };
 
 export default Webmap;
-
-// export default connect(
-//   (state, props) => {
-//     const subrequests = state.content.subrequests;
-//
-//     const { map_layers = [] } = props;
-//     // const map_service_infos = {};
-//     const map_layer_infos = {};
-//
-//     // Request info for the map service
-//     map_layers.forEach(({ map_service_url, layer = null }) => {
-//       // map_service_infos[map_service_url] = subrequests[map_service_url]?.data;
-//       const layer_url = layer !== null ? `${map_service_url}/${layer}` : null;
-//       const layer_info = layer_url ? subrequests[layer_url]?.data : null;
-//       map_layer_infos[layer_url] = layer_info;
-//     });
-//
-//     return {
-//       subrequests,
-//       // map_service_infos,
-//       map_layer_infos,
-//     };
-//   },
-//   { getProxiedExternalContent },
-// )(Webmap);
-
-// service_info: subrequests[map_service_url]?.data,
-// layer_info: layer_url ? subrequests[layer_url]?.data : null,
-// map_filters, map_service_url, layer,
-// map_filters={map_filters}
-// map_service_url={map_service_url}
-// layer={layer}
-//
-// const { data = {} } = props;
-// const { map_service_url, layer } = data || {};
-// const layer_url = map_service_url ? `${map_service_url}/${layer}` : null;
