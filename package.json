@@ -21,13 +21,13 @@
     "@eeacms/volto-corsproxy"
   ],
   "dependencies": {
-    "@eeacms/volto-embed": "^2.0.1",
-    "@eeacms/volto-corsproxy": "^2.1.2",
+    "@eeacms/volto-corsproxy": "*",
+    "@eeacms/volto-embed": "*",
     "esri-loader": "2.16.0"
   },
   "devDependencies": {
-    "@plone/scripts": "*",
     "@cypress/code-coverage": "^3.10.0",
+    "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "md5": "^2.3.0"
   },
