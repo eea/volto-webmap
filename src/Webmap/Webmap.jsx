@@ -41,15 +41,16 @@ const Webmap = (props) => {
   React.useEffect(() => {
     if (!modules_loaded.current) {
       modules_loaded.current = true;
-      loadModules(MODULES, options).then((_modules) => {
-        const [Map, MapView, FeatureLayer, MapImageLayer] = _modules;
-        setModules({
-          Map,
-          MapView,
-          FeatureLayer,
-          MapImageLayer,
-        });
-      });
+      loadModules(MODULES, options).then(
+        ([Map, MapView, FeatureLayer, MapImageLayer]) => {
+          setModules({
+            Map,
+            MapView,
+            FeatureLayer,
+            MapImageLayer,
+          });
+        },
+      );
     }
   }, [setModules, options]);
 
@@ -89,7 +90,7 @@ const Webmap = (props) => {
     });
 
     view.whenLayerView(layers[0]).then((layerView) => {
-      layerView.watch('updating', (_val) => {
+      layerView.watch('updating', () => {
         setMapIsUpdating(true);
       });
     });

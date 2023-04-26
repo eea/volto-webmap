@@ -1,16 +1,12 @@
 /* eslint-disable */
 import { Component } from 'react';
 
-import { MapSchema, MapFiltersSchema } from './schema';
+import { MapSchema } from './schema';
 import withMapLayers from './withMapLayers';
 
 class SchemaProvider extends Component {
-  deriveSchemaFromProps = () => {
-    return MapSchema();
-  };
-
   render() {
-    return this.props.children(this.deriveSchemaFromProps());
+    return this.props.children(MapSchema());
   }
 }
 
