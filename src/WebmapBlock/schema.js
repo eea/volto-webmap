@@ -72,7 +72,7 @@ export const MapSchema = () => ({
     map_layers: {
       title: 'Map layers',
       schema: MapLayerSchema(),
-      widget: 'object_list_inline',
+      widget: 'object_list',
     },
     align: {
       widget: 'align',
