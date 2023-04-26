@@ -27,7 +27,7 @@ export const filterToWhereParams = (map_filters) => {
 
 const Webmap = (props) => {
   const { data = {} } = props;
-  const { base_layer, map_layers } = data;
+  const { base_layer, map_layers = [] } = data;
   // map_filters, map_service_url, layer,
   const options = {
     css: true,
