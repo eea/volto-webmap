@@ -16,11 +16,13 @@
 
 1. Go to http://localhost:3000
 
-1.  Happy hacking!
+1. Initialize git hooks
 
     ```Bash
-    cd src/addons/volto-webmap/
+    yarn prepare
     ```
+
+1.  Happy hacking!
 
 ### Or add @eeacms/volto-webmap to your Volto project
 
@@ -64,7 +66,7 @@ Before starting make sure your development environment is properly set. See [Vol
 
 1. Install
 
-        $ yarn develop
+        $ make develop
         $ yarn
 
 1. Start backend
@@ -72,8 +74,6 @@ Before starting make sure your development environment is properly set. See [Vol
         $ docker run -d --name plone -p 8080:8080 -e SITE=Plone plone
 
     ...wait for backend to setup and start - `Ready to handle requests`:
-
-        $ docker logs -f plone
 
     ...you can also check http://localhost:8080/Plone
 
