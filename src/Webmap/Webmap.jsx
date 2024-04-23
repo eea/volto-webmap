@@ -42,9 +42,9 @@ const Webmap = (props) => {
     if (!modules_loaded.current) {
       modules_loaded.current = true;
       loadModules(MODULES, options).then(
-        ([Map, MapView, FeatureLayer, MapImageLayer]) => {
+        ([EsriMap, MapView, FeatureLayer, MapImageLayer]) => {
           setModules({
-            Map,
+            EsriMap,
             MapView,
             FeatureLayer,
             MapImageLayer,
@@ -57,7 +57,7 @@ const Webmap = (props) => {
   const esri = React.useMemo(() => {
     if (Object.keys(modules).length === 0) return {};
 
-    const { Map, MapView, FeatureLayer, MapImageLayer } = modules;
+    const { EsriMap, MapView, FeatureLayer, MapImageLayer } = modules;
 
     let layers = map_layers
       .filter(({ map_service_url, layer }) => map_service_url && layer)
@@ -80,7 +80,7 @@ const Webmap = (props) => {
         return mapLayer;
       });
 
-    const map = new Map({
+    const map = new EsriMap({
       basemap: base_layer || 'hybrid',
       layers,
     });

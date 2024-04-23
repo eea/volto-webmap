@@ -3,7 +3,7 @@ import { WebmapBlockEdit, WebmapBlockView } from './WebmapBlock';
 import MapLayerSelectWidget from './WebmapBlock/Widgets/MapLayerSelectWidget';
 import ConfirmInputWidget from './Widgets/ConfirmInputWidget';
 
-export default (config) => {
+const config = (config) => {
   config.blocks.blocksConfig.esriWebmap = {
     id: 'esriWebmap',
     title: 'ESRI Webmap',
@@ -23,3 +23,5 @@ export default (config) => {
   config.widgets.widget.confirm_url = ConfirmInputWidget;
   return config;
 };
+
+export default config;
