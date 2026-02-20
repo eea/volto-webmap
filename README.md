@@ -3,16 +3,16 @@
 [![Releases](https://img.shields.io/github/v/release/eea/volto-webmap)](https://github.com/eea/volto-webmap/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-webmap%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-webmap/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-master)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-webmap%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-webmap/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap-develop)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&branch=develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap&branch=develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&branch=develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap&branch=develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&branch=develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap&branch=develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-webmap&branch=develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-webmap&branch=develop)
 
 [Volto](https://github.com/plone/volto) add-on
 
